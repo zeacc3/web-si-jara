@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Manage Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold text-center text-blue-600 mb-8">Admin</h1>
+
+    <!-- Add Product Form -->
+    <div class="bg-white shadow-md rounded-md p-6 mb-8">
+      <h2 class="text-xl font-bold mb-4">Tambahkan Product</h2>
+      <form id="add-product-form" class="space-y-4">
+        <div>
+          <label for="product-name" class="block text-gray-700 font-semibold mb-2">Nama Product</label>
+          <input type="text" id="product-name" name="product-name" placeholder="Enter product name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div>
+          <label for="product-price" class="block text-gray-700 font-semibold mb-2">Harga</label>
+          <input type="number" id="product-price" name="product-price" placeholder="Enter product price" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div>
+          <label for="product-stock" class="block text-gray-700 font-semibold mb-2">Stok</label>
+          <input type="number" id="product-stock" name="product-stock" placeholder="Enter product stock" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <div>
+          <label for="product-image" class="block text-gray-700 font-semibold mb-2">Image URL</label>
+          <input type="text" id="product-image" name="product-image" placeholder="Enter image URL" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md font-semibold hover:bg-blue-700">Tambahkan</button>
+      </form>
+    </div>
+
+    <!-- Product List -->
+    <div class="bg-white shadow-md rounded-md p-6">
+      <h2 class="text-xl font-bold mb-4">List Product</h2>
+      <table class="w-full border-collapse border border-gray-200">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="border border-gray-200 px-4 py-2 text-left">Nama Product</th>
+            <th class="border border-gray-200 px-4 py-2 text-left">Harga</th>
+            <th class="border border-gray-200 px-4 py-2 text-left">Stok</th>
+            <th class="border border-gray-200 px-4 py-2 text-left">Image</th>
+            <th class="border border-gray-200 px-4 py-2 text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+          <!-- Example Product Row -->
+          <tr>
+            <td class="border border-gray-200 px-4 py-2">
+              <span class="product-name">Example Product</span>
+            </td>
+            <td class="border border-gray-200 px-4 py-2">
+              <input type="number" value="10000" class="w-full border px-2 py-1 rounded-md text-center product-price">
+            </td>
+            <td class="border border-gray-200 px-4 py-2">
+              <input type="number" value="20" class="w-full border px-2 py-1 rounded-md text-center product-stock">
+            </td>
+            <td class="border border-gray-200 px-4 py-2">
+              <img src="https://via.placeholder.com/50" alt="Product Image" class="w-12 h-12">
+            </td>
+            <td class="border border-gray-200 px-4 py-2 text-center">
+              <button class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 save-btn">Save</button>
+              <button class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 delete-product-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
